@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+</head>
+<body>
+   
+    <div></div>
+    <script>
+        var cartt=JSON.parse(localStorage.getItem("car"));
+        // console.log(cartt);
+        let div=document.getElementsByTagName("div");
+        cartt.map((val,ind)=>{
+           
+
+        //  let div=document.getElementsByTagName("div");
+         let divtag=document.createElement("div");
+
+       
+
+            var a2=document.createElement("div");
+            a2.innerHTML=val.id;
+            // console.log(a2);
+
+            var a3=document.createElement("div");
+            a3.innerHTML=val.title;
+            console.log(a3);
+
+            var a4=document.createElement("div");
+            a4.innerHTML=val.price;
+            console.log(a4);
+
+            var a5=document.createElement("div");
+            a5.innerHTML=val.category;
+            console.log(a5);
+            
+
+            let img=document.createElement("img");
+            img.setAttribute("src",val.image);
+            img.style.width="100px";
+            img.style.height="100px";
+            img.style.margin="5%"
+            console.log(img);
+
+            var a6=document.createElement("div");
+            a6.innerHTML=val.rating.rate;
+            console.log(a6);
+
+            var a7=document.createElement("div");
+            a7.innerHTML=val.rating.count;
+            console.log(a7);
+
+            var btn1=document.createElement("button");
+            btn1.innerHTML="Remove item";
+
+
+            divtag.appendChild(a2);
+            divtag.appendChild(a3);
+            divtag.appendChild(a4);
+            divtag.appendChild(a5);
+            divtag.appendChild(img);
+            divtag.appendChild(a6);
+            divtag.appendChild(a7);
+            divtag.appendChild(btn1);
+
+            btn1.addEventListener("click",()=>{
+                cartt.splice(ind,1);
+                
+                // localStorage.clear();
+                window.localStorage.setItem("car",JSON.stringify(cartt));
+                cartitems(cartt);
+
+            })
+
+           
+            divtag.style.display="flex";
+            divtag.style.flexDirection="column";
+            divtag.style.justifyContent="space-evenly";
+            divtag.style.wordBreak="break-all"
+            divtag.style.backgroundColor="pink";
+            divtag.style.width="20%";
+            divtag.style.height="350px";
+            divtag.style.border="3px solid";
+            divtag.style.margin="3%";
+            divtag.style.padding="1%";
+
+            div[0].appendChild(divtag);
+            console.log(div[0]);
+
+            
+
+
+        })
+
+        function cartitem(bhavii){
+            div[0].innerHTML="";
+            bhavii.map((val,ind)=>{
+           
+
+         let div=document.getElementsByTagName("div");
+         let divtag=document.createElement("div");
+
+       
+
+            var a2=document.createElement("div");
+            a2.innerHTML=val.id;
+            // console.log(a2);
+
+            var a3=document.createElement("div");
+            a3.innerHTML=val.title;
+            console.log(a3);
+
+            var a4=document.createElement("div");
+            a4.innerHTML=val.price;
+            console.log(a4);
+
+            var a5=document.createElement("div");
+            a5.innerHTML=val.category;
+            console.log(a5);
+            
+
+            let img=document.createElement("img");
+            img.setAttribute("src",val.image);
+            img.style.width="100px";
+            img.style.height="100px";
+            img.style.margin="5%"
+            console.log(img);
+
+            var a6=document.createElement("div");
+            a6.innerHTML=val.rating.rate;
+            console.log(a6);
+
+            var a7=document.createElement("div");
+            a7.innerHTML=val.rating.count;
+            console.log(a7);
+
+            var btn1=document.createElement("button");
+            btn1.innerHTML="Remove item";
+
+
+            divtag.appendChild(a2);
+            divtag.appendChild(a3);
+            divtag.appendChild(a4);
+            divtag.appendChild(a5);
+            divtag.appendChild(img);
+            divtag.appendChild(a6);
+            divtag.appendChild(a7);
+            divtag.appendChild(btn1);
+
+            btn1.addEventListener("click",()=>{
+                cartt.splice(ind,1);
+                window.localStorage.setItem("car",JSON.stringify(cartt));
+
+            })
+            
+
+
+           
+            divtag.style.display="flex";
+            divtag.style.flexDirection="column";
+            divtag.style.justifyContent="space-evenly";
+            divtag.style.wordBreak="break-all"
+            divtag.style.backgroundColor="pink";
+            divtag.style.width="20%";
+            divtag.style.height="350px";
+            divtag.style.border="3px solid";
+            divtag.style.margin="3%";
+            divtag.style.padding="1%";
+
+            div[0].appendChild(divtag);
+            console.log(div[0]);
+
+            
+
+
+        })
+        }
+        
+    </script>
+</body>
+</html>

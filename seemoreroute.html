@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+    
+    <script>
+        var arr=JSON.parse(localStorage.getItem("seemore"));
+        let div1=document.getElementsByTagName("div");
+        console.log(arr);
+
+        let arr1=document.createElement("div");
+        let arr2=document.createElement("div");
+        let arr3=document.createElement("div");
+        let arr4=document.createElement("div");
+        let arr5=document.createElement("div");
+        let arr6=document.createElement("div");
+        let arr7=document.createElement("div");
+
+        arr1.innerHTML=arr.id;
+        arr2.innerHTML=arr.category;
+        arr3.innerHTML=arr.title;
+        arr4.innerHTML=arr.description;
+        arr5.innerHTML=arr.rating.rate;
+        arr6.innerHTML=arr.rating.count;
+        arr7.innerHTML=arr.price;
+
+        let imgg=document.createElement("img");
+        imgg.setAttribute("src",arr.image);
+        imgg.style.width="100px";
+        imgg.style.height="100px";
+
+        div1[0].appendChild(arr1);
+        div1[0].appendChild(arr2);
+        div1[0].appendChild(arr3);
+        div1[0].appendChild(arr4);
+        div1[0].appendChild(arr5);
+        div1[0].appendChild(arr6);
+        div1[0].appendChild(imgg);
+        div1[0].appendChild(arr7);
+
+        let btn=document.createElement("button");
+        btn.innerHTML="back";
+        btn.addEventListener("click",()=>{
+            window.history.back();
+
+        })
+        div1[0].appendChild(btn);
+        
+       
+      
+    </script>
+</body>
+</html>
